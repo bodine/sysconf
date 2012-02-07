@@ -19,4 +19,3 @@ file { '/etc/hostname':
 	ensure => present,
 	content => "$host_name",
 }
-mike@oscar:~/Backup-server/puppet$ 
