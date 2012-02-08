@@ -49,6 +49,12 @@ echo "define(BASEDIR, $PWD)" >> local.defs
 echo "define(NEEDSUSB, $needs_usb)" >> local.defs
 echo "define(NEEDSPCMCIA, $needs_pcmcia)" >> local.defs
 
+###
+# Making /etc/issue
+#
+target_dir="`facter lsbdistid`/`facter lsbdistrelease`/root/etc"
+m4 local.defs $target_dir/issue.m4 > $target_dir/issue
+
 
 
 ###
@@ -57,5 +63,5 @@ echo "define(NEEDSPCMCIA, $needs_pcmcia)" >> local.defs
 
 m4 local.defs machine.pp.m4 > ${hostname}.pp
 
-sudo puppet apply --manifestdir `facter lsbdistid`/`facter lsbdistrelease`/ $hostname.pp
+sudo puppet apply --modulepath `facter lsbdistid`/`facter lsbdistrelease`/ $hostname.pp
 
