@@ -63,5 +63,5 @@ m4 local.defs $target_dir/issue.m4 > $target_dir/issue
 
 m4 local.defs machine.pp.m4 > ${hostname}.pp
 
-sudo puppet apply --modulepath `facter lsbdistid`/`facter lsbdistrelease`/ $hostname.pp
+sudo puppet apply --modulepath `facter lsbdistid`/`facter lsbdistrelease`/puppet $hostname.pp
 
