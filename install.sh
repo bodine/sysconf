@@ -6,6 +6,11 @@ then
 	sudo apt-get install puppet
 fi
 
+if ! which m4
+then
+	sudo apt-get install m4
+fi
+
 ###
 # Making local definitions file
 #
