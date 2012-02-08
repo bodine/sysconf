@@ -1,1 +1,13 @@
 System configuration management scripts, manifests, etc.
+
+Installation instructions:
+
+Here's what's worked for me so far:
+
+
+wget -O sysconf.tgz https://github.com/bodine/sysconf/tarball/master
+tar xzvf sysconf.tgz
+cd bodine-sysconf-*
+./install.sh
+# ... Answer some questions
+
